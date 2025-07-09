@@ -7,5 +7,6 @@ Each commit links to its detailed log.
 
 | Commit Hash | Date & Time       | Author       | Message           |
 |-------------|------------------|--------------|-------------------|
+| [29c21ffb](./29c21ffb.md) | 2025-07-09 22:15 | Johan Sörell | fix(detail, script, description): improve help text description to highlight key features |
 | [0621d7e9](./0621d7e9.md) | 2025-07-09 18:30 | Johan Sörell | chore(docstring, pyproject): added my email to pyproject and changed description of project in main file |
 | [f0fbbed8](./f0fbbed8.md) | 2025-07-09 18:09 | Johan Sörell | doc(init): init repository with githooks |

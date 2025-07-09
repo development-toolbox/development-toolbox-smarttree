@@ -1,6 +1,6 @@
 # 📊 Git Commit Timeline
 
-> **Generated on:** 2025-07-09 18:30:05
+> **Generated on:** 2025-07-09 22:15:21
 
 > **Branch:** `main`
 
@@ -8,10 +8,10 @@
 | **Branch Name** | **Last Commit** | **Author** |
 |----------------|--------------|------------|
 | feat/update-githooks-installation-20250709-180643 | 7496110 | Johan SÃ¶rell |
-| main | 0621d7e | Johan SÃ¶rell |
-| origin | 84ea768 | Johan SÃ¶rell |
+| main | 29c21ff | Johan SÃ¶rell |
+| origin | f41996a | Johan SÃ¶rell |
 | origin/feat/update-githooks-installation-20250709-180643 | 7496110 | Johan SÃ¶rell |
-| origin/main | 84ea768 | Johan SÃ¶rell |
+| origin/main | f41996a | Johan SÃ¶rell |
 
 ## 🏷️ Tags
 | **Tag** | **Commit Hash** | **Tagged On** |
@@ -23,6 +23,16 @@
 | 84ea768 | Merge pull request #1 from development-toolbox/feat/update-githooks-installation-20250709-180643 | 2025-07-09 18:10:14 +0200 |
 
 ## 📁 Commit Log
+### ✅ Commit: [29c21ff](https://github.com/development-toolbox/development-toolbox-smarttree/commit/29c21ff)
+- **Date:** 2025-07-09 22:15:20 +0200
+- **Author:** Johan SÃ¶rell
+- **Message:** fix(detail, script, description): improve help text description to highlight key features
+
+### ✅ Commit: [f41996a](https://github.com/development-toolbox/development-toolbox-smarttree/commit/f41996a)
+- **Date:** 2025-07-09 18:30:04 +0200
+- **Author:** Johan SÃ¶rell
+- **Message:** Update commit timeline: 0621d7e971d364efa73d81e5c5505c1f58226a0c
+
 ### ✅ Commit: [0621d7e](https://github.com/development-toolbox/development-toolbox-smarttree/commit/0621d7e)
 - **Date:** 2025-07-09 18:30:04 +0200
 - **Author:** Johan SÃ¶rell
