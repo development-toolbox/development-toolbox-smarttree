@@ -1,0 +1,182 @@
+# 🌳 smarttree
+
+[![PyPI version](https://badge.fury.io/py/smarttree.svg)](https://badge.fury.io/py/smarttree)
+[![Python Support](https://img.shields.io/pypi/pyversions/smarttree.svg)](https://pypi.org/project/smarttree/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A modern, feature-rich directory tree viewer for the command line, inspired by the classic `tree` command but with added smart features like `.treeignore` support, emoji icons, and multiple output formats.
+
+## ✨ Features
+
+- 📁 **Tree visualization** - Display directory structure in a tree format
+- 🎨 **Colored output** - Optionally colorize folders for better visibility
+- 📊 **Depth control** - Limit tree depth with `--depth` flag
+- 📝 **Multiple output formats** - Export to text or markdown files
+- 😊 **Emoji support** - Add visual indicators for files and folders
+- 🚫 **Smart ignore** - Use `.treeignore` files (like `.gitignore`) to exclude paths
+- 📈 **Statistics** - Show summary of total files and folders
+- 📜 **Logging** - Save output to log files for documentation
+
+## 🚀 Installation
+
+```bash
+pip install smarttree
+```
+
+## 📖 Usage
+
+### Basic usage
+
+```bash
+# Display tree of current directory
+smarttree
+
+# Display tree of specific directory
+smarttree /path/to/directory
+```
+
+### Common options
+
+```bash
+# Limit depth to 2 levels
+smarttree --depth 2
+
+# Enable colored output
+smarttree --color
+
+# Show summary statistics
+smarttree --summary
+
+# Export to markdown with emojis
+smarttree --output tree.md --emoji
+
+# Combine multiple options
+smarttree ~/projects --depth 3 --color --summary --output project-tree.md
+```
+
+### All options
+
+```
+usage: smarttree [-h] [-d DEPTH] [-o OUTPUT] [-c] [-s] [--log LOG] [--emoji] [--no-emoji] [-v] [path]
+
+🌳 Smart Directory Tree Viewer - A modern alternative to 'tree'
+
+positional arguments:
+  path                  Directory path to scan (default: current directory)
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DEPTH, --depth DEPTH
+                        Limit recursion depth (like 'tree -L N')
+  -o OUTPUT, --output OUTPUT
+                        Output file (e.g. 'tree.txt' or 'tree.md')
+  -c, --color           Enable color for folders (blue)
+  -s, --summary         Show total file and folder count after listing
+  --log LOG             Save output to an additional .log file (plain text)
+  --emoji               Enable emoji icons (📁, 📄) in Markdown output
+  --no-emoji            Disable emoji icons (📁, 📄)
+  -v, --version         show program's version number and exit
+```
+
+## 🚫 Using .treeignore
+
+Create a `.treeignore` file in any directory to exclude specific files or folders from the tree output:
+
+```bash
+# .treeignore example
+__pycache__
+*.pyc
+.git
+node_modules
+.DS_Store
+.env
+*.log
+```
+
+## 📸 Examples
+
+### Basic tree output
+```
+📂 /home/user/my-project
+├── 📁 src
+│   ├── 📄 main.py
+│   └── 📄 utils.py
+├── 📁 tests
+│   └── 📄 test_main.py
+├── 📄 README.md
+└── 📄 setup.py
+```
+
+### With summary
+```
+📂 /home/user/my-project
+├── src/
+│   ├── main.py
+│   └── utils.py
+├── tests/
+│   └── test_main.py
+├── README.md
+└── setup.py
+
+📊 Summary:
+  📁 Folders: 2
+  📄 Files:   5
+```
+
+### Markdown output
+When using `--output file.md`, the tree is automatically wrapped in a code block:
+
+````markdown
+```
+📂 /home/user/my-project
+├── 📁 src
+│   ├── 📄 main.py
+│   └── 📄 utils.py
+...
+```
+````
+
+## 🛠️ Development
+
+```bash
+# Clone the repository
+git clone https://github.com/development-toolbox/development-toolbox-smarttree.git
+cd development-toolbox-smarttree
+
+# Install in development mode
+pip install -e .
+
+# Run tests (if available)
+python -m pytest
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 👤 Author
+
+**Johan Sörell**
+
+- GitHub: [@J-SirL](https://github.com/J-SirL)
+- Blog: [automationblueprint.site](https://automationblueprint.site)
+
+## 🙏 Acknowledgments
+
+- Inspired by the Unix `tree` command
+- Built with Python's standard library - no external dependencies required
+- Special thanks to all contributors
+
+---
+
+If you find this tool useful, please consider giving it a ⭐ on GitHub!

@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smarttree"
+version = "0.1.0"
+description = "A modern, feature-rich directory tree viewer with emoji support and intelligent ignore patterns"
+readme = "README.md"
+authors = [
+    {name = "Johan Sörell", email = "sorell.johan@gmail.com"}
+]
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Filesystems",
+    "Topic :: Utilities",
+]
+keywords = ["tree", "directory", "folder", "structure", "visualization", "emoji", "cli", "command-line"]
+requires-python = ">=3.7"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/development-toolbox/development-toolbox-smarttree"
+Documentation = "https://github.com/development-toolbox/development-toolbox-smarttree#readme"
+Repository = "https://github.com/development-toolbox/development-toolbox-smarttree"
+Issues = "https://github.com/development-toolbox/development-toolbox-smarttree/issues"
+Blog = "https://automationblueprint.site"
+
+[project.scripts]
+smarttree = "smarttree:main"
+
+[tool.setuptools]
+py-modules = ["smarttree"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["smarttree*"]
