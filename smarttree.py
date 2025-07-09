@@ -112,7 +112,7 @@ def main():
     """Main entry point for smarttree command."""
     parser = argparse.ArgumentParser(
         prog="smarttree",
-        description="🌳 Smart Directory Tree Viewer - A modern alternative to 'tree'",
+        description="🌳 SmartTree - Modern cross-platform directory tree viewer with emoji support, Markdown export, .treeignore filtering, and colorized output",
         epilog="""Examples:
   smarttree
   smarttree /var/log -d 2
