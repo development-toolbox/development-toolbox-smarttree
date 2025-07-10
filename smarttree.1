@@ -1,0 +1,108 @@
+.TH SMARTTREE 1 "January 2025" "smarttree 0.1.0" "User Commands"
+.SH NAME
+smarttree \- modern cross-platform directory tree viewer
+.SH SYNOPSIS
+.B smarttree
+[\fIOPTIONS\fR] [\fIPATH\fR]
+.SH DESCRIPTION
+.B SmartTree
+is a modern, cross-platform CLI tool to visualize directory structures like the Unix tree command 
+with enhanced features such as emoji support, Markdown export, colorized output, depth control, 
+\&.treeignore filtering, and summary statistics. Built with Python, ideal for automation, 
+documentation, and DevOps workflows.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Show help message and exit
+.TP
+.BR \-d ", " \-\-depth " " \fIDEPTH\fR
+Limit recursion depth (like 'tree -L N')
+.TP
+.BR \-o ", " \-\-output " " \fIFILE\fR
+Output to file (e.g. 'tree.txt' or 'tree.md'). 
+If the file ends with .md, output is wrapped in a Markdown code block.
+.TP
+.BR \-c ", " \-\-color
+Enable color for folders (blue)
+.TP
+.BR \-s ", " \-\-summary
+Show total file and folder count after listing
+.TP
+.BR \-\-log " " \fIFILE\fR
+Save output to an additional .log file (plain text)
+.TP
+.BR \-\-emoji
+Enable emoji icons (📁, 📄) in output. 
+This is enabled by default for Markdown output.
+.TP
+.BR \-\-no\-emoji
+Disable emoji icons
+.TP
+.BR \-v ", " \-\-version
+Show version number and exit
+.TP
+.I PATH
+Directory path to scan (default: current directory)
+.SH TREEIGNORE FILE
+If a 
+.B .treeignore
+file exists in the target directory, SmartTree will exclude matching entries from the output.
+The format is similar to .gitignore:
+.PP
+.RS
+# Comments start with hash
+.br
+__pycache__
+.br
+*.pyc
+.br
+node_modules
+.br
+.DS_Store
+.RE
+.SH EXAMPLES
+.TP
+.B smarttree
+Display tree of current directory
+.TP
+.B smarttree /var/log \-d 2
+Display /var/log with maximum depth of 2
+.TP
+.B smarttree \-\-color \-\-summary
+Display current directory with colored folders and summary statistics
+.TP
+.B smarttree \-o project\-tree.md \-\-emoji
+Export tree to Markdown file with emoji icons
+.TP
+.B smarttree ~/projects \-\-depth 3 \-\-log output.log
+Display ~/projects (max depth 3) and save to log file
+.SH EXIT STATUS
+.TP
+.B 0
+Success
+.TP
+.B 1
+General error (e.g., invalid arguments, I/O error)
+.SH FILES
+.TP
+.I .treeignore
+Patterns of files and directories to exclude from tree output
+.SH ENVIRONMENT
+SmartTree uses UTF-8 encoding for proper emoji and unicode support.
+.SH AUTHOR
+Written by Johan Sörell
+.SH REPORTING BUGS
+Report bugs at: <https://github.com/development-toolbox/development-toolbox-smarttree/issues>
+.SH COPYRIGHT
+Copyright © 2025 Johan Sörell. License: MIT
+.br
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+.SH SEE ALSO
+.BR tree (1),
+.BR ls (1),
+.BR find (1)
+.PP
+Full documentation at: <https://github.com/development-toolbox/development-toolbox-smarttree>
+.br
+Blog: <https://automationblueprint.site>

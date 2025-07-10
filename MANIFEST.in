@@ -1,0 +1,30 @@
+# Include documentation and metadata
+include README.md
+include LICENSE
+include PUBLISHING.md
+include DOCUMENTATION.md
+
+# Include man page (both source and compressed)
+include smarttree.1
+include smarttree.1.gz
+
+# Include shell completion scripts
+recursive-include completions *.bash *.fish _*
+
+# Include Python files
+include smarttree.py
+include generate_completions.py
+
+# Include any future documentation
+recursive-include docs *.md *.rst
+
+# Include configuration files
+include pyproject.toml
+include .gitignore
+
+# Exclude development/temporary files
+global-exclude __pycache__
+global-exclude *.py[co]
+global-exclude .DS_Store
+global-exclude *.swp
+global-exclude *.log
