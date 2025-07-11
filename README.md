@@ -175,7 +175,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Inspired by the Unix `tree` command
 - Built with Python's standard library - no external dependencies required
-- Special thanks to all contributors
+- Special thanks to all current and future contributors. 
+- You can contribute by giving support or help with the extention of the program.
+
+## contributors
 
 ---
 
