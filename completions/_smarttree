@@ -1,0 +1,21 @@
+#compdef smarttree
+
+_smarttree() {
+    local -a opts
+    opts=(
+        '(-h --help)'{-h,--help}'[Show help message and exit]'
+        '(-d --depth)'{-d,--depth}'[Limit recursion depth]:depth:_numbers'
+        '(-o --output)'{-o,--output}'[Output file]:output file:_files'
+        '(-c --color)'{-c,--color}'[Enable color for folders]'
+        '(-s --summary)'{-s,--summary}'[Show total file and folder count]'
+        '--log[Save output to log file]:log file:_files'
+        '--emoji[Enable emoji icons in output]'
+        '--no-emoji[Disable emoji icons]'
+        '(-v --version)'{-v,--version}'[Show version number and exit]'
+        '*:directory:_directories'
+    )
+
+    _arguments -s $opts
+}
+
+_smarttree "$@"
