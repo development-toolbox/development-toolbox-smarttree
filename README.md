@@ -13,7 +13,7 @@ SmartTree is a modern, cross-platform CLI tool to visualize directory structures
 - 📊 **Depth control** - Limit tree depth with `--depth` flag
 - 📝 **Multiple output formats** - Export to text or markdown files
 - 😊 **Emoji support** - Add visual indicators for files and folders
-- 🚫 **Smart ignore** - Use `.treeignore` files (like `.gitignore`) to exclude paths
+- 🚫 **Smart ignore** - Advanced `.treeignore` with wildcard patterns like `.gitignore`
 - 📈 **Statistics** - Show summary of total files and folders
 - 📜 **Logging** - Save output to log files for documentation
 
@@ -22,6 +22,14 @@ SmartTree is a modern, cross-platform CLI tool to visualize directory structures
 ```bash
 pip install smarttree
 ```
+
+## 🆕 What's New in v0.2.0
+
+- **Enhanced `.treeignore`** - Now supports full wildcard patterns (`*`, `?`, `[seq]`)
+- **Directory-specific patterns** - Use trailing `/` to match only directories
+- **Better pattern matching** - Works like `.gitignore` with `fnmatch` patterns
+- **Case-sensitive matching** - Consistent behavior across all platforms
+- **Comprehensive documentation** - Added man pages and shell completions
 
 ## 📖 Usage
 
@@ -59,7 +67,7 @@ smarttree ~/projects --depth 3 --color --summary --output project-tree.md
 ```
 usage: smarttree [-h] [-d DEPTH] [-o OUTPUT] [-c] [-s] [--log LOG] [--emoji] [--no-emoji] [-v] [path]
 
-🌳 Smart Directory Tree Viewer - A modern alternative to 'tree'
+🌳 SmartTree - Modern cross-platform directory tree viewer with emoji support, Markdown export, .treeignore filtering, and colorized output
 
 positional arguments:
   path                  Directory path to scan (default: current directory)
@@ -121,6 +129,8 @@ dist*/
 - `[!seq]` matches any character not in seq
 - Patterns ending with `/` only match directories
 - Patterns without `/` match both files and directories
+- **Pattern matching is case-sensitive** (e.g., `*.PNG` won't match `file.png`)
+- **Pattern matching is case-sensitive** (e.g., `*.PNG` won't match `file.png`)
 
 ## 📸 Examples
 
