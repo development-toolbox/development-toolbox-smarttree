@@ -4,7 +4,7 @@
 [![Python Support](https://img.shields.io/pypi/pyversions/smarttree.svg)](https://pypi.org/project/smarttree/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A modern, feature-rich directory tree viewer for the command line, inspired by the classic `tree` command but with added smart features like `.treeignore` support, emoji icons, and multiple output formats.
+SmartTree is a modern, cross-platform CLI tool to visualize directory structures like the Unix tree command — with enhanced features such as emoji support, Markdown export, colorized output, depth control, .treeignore filtering, and summary statistics. Built with Python, ideal for automation, documentation, and DevOps workflows.
 
 ## ✨ Features
 
@@ -80,18 +80,47 @@ optional arguments:
 
 ## 🚫 Using .treeignore
 
-Create a `.treeignore` file in any directory to exclude specific files or folders from the tree output:
+Create a `.treeignore` file in any directory to exclude specific files or folders from the tree output. The syntax supports wildcards and patterns similar to `.gitignore`:
 
 ```bash
 # .treeignore example
-__pycache__
-*.pyc
-.git
-node_modules
+
+# Ignore specific files
 .DS_Store
-.env
+Thumbs.db
 *.log
+
+# Ignore file patterns
+*.pyc
+*.pyo
+*.swp
+*~
+
+# Ignore directories (trailing slash)
+__pycache__/
+.git/
+node_modules/
+.venv/
+venv/
+env/
+
+# Ignore by wildcard patterns
+build*/
+dist*/
+*.egg-info/
+.*.cache/
+
+# Comments start with #
+# Each pattern is matched against filenames using fnmatch
 ```
+
+### Pattern Rules:
+- `*` matches any number of characters
+- `?` matches a single character
+- `[seq]` matches any character in seq
+- `[!seq]` matches any character not in seq
+- Patterns ending with `/` only match directories
+- Patterns without `/` match both files and directories
 
 ## 📸 Examples
 
@@ -175,10 +204,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Inspired by the Unix `tree` command
 - Built with Python's standard library - no external dependencies required
-- Special thanks to all current and future contributors. 
-- You can contribute by giving support or help with the extention of the program.
-
-## contributors
+- Special thanks to all contributors
 
 ---
 

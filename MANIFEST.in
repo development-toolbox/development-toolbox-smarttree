@@ -3,6 +3,7 @@ include README.md
 include LICENSE
 include PUBLISHING.md
 include DOCUMENTATION.md
+include CHANGELOG.md
 
 # Include man page (both source and compressed)
 include smarttree.1
@@ -14,6 +15,16 @@ recursive-include completions *.bash *.fish _*
 # Include Python files
 include smarttree.py
 include generate_completions.py
+
+# Include example files
+include .treeignore.example
+
+# Include test files
+include test_treeignore.py
+
+# Include setup scripts
+include setup.sh
+include Makefile
 
 # Include any future documentation
 recursive-include docs *.md *.rst
