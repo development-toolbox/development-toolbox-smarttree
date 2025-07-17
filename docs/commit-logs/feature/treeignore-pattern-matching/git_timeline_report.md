@@ -1,6 +1,6 @@
 # 📊 Git Commit Timeline
 
-> **Generated on:** 2025-07-17 15:11:44
+> **Generated on:** 2025-07-17 15:18:56
 
 > **Branch:** `feature/treeignore-pattern-matching`
 
@@ -8,10 +8,11 @@
 | **Branch Name** | **Last Commit** | **Author** |
 |----------------|--------------|------------|
 | feat/update-githooks-installation-20250709-180643 | 7496110 | Johan SÃ¶rell |
-| feature/treeignore-pattern-matching | 4c7db28 | Johan SÃ¶rell |
+| feature/treeignore-pattern-matching | 58d079c | Johan SÃ¶rell |
 | main | f75fdf9 | Johan SÃ¶rell |
 | origin | f75fdf9 | Johan SÃ¶rell |
 | origin/feat/update-githooks-installation-20250709-180643 | 7496110 | Johan SÃ¶rell |
+| origin/feature/treeignore-pattern-matching | cabc0dc | Johan SÃ¶rell |
 | origin/main | f75fdf9 | Johan SÃ¶rell |
 
 ## 🏷️ Tags
@@ -24,6 +25,16 @@
 | 84ea768 | Merge pull request #1 from development-toolbox/feat/update-githooks-installation-20250709-180643 | 2025-07-09 18:10:14 +0200 |
 
 ## 📁 Commit Log
+### ✅ Commit: [58d079c](https://github.com/development-toolbox/development-toolbox-smarttree/commit/58d079c)
+- **Date:** 2025-07-17 15:18:56 +0200
+- **Author:** Johan SÃ¶rell
+- **Message:** docs(man): add man page and setup infrastructure
+
+### ✅ Commit: [cabc0dc](https://github.com/development-toolbox/development-toolbox-smarttree/commit/cabc0dc)
+- **Date:** 2025-07-17 15:11:43 +0200
+- **Author:** Johan SÃ¶rell
+- **Message:** Update commit timeline: 4c7db28f98ca83085ec88ddb90d388c255f93ac1
+
 ### ✅ Commit: [4c7db28](https://github.com/development-toolbox/development-toolbox-smarttree/commit/4c7db28)
 - **Date:** 2025-07-17 15:11:43 +0200
 - **Author:** Johan SÃ¶rell

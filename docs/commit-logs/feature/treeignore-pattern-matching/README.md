@@ -7,4 +7,5 @@ Each commit links to its detailed log.
 
 | Commit Hash | Date & Time       | Author       | Message           |
 |-------------|------------------|--------------|-------------------|
+| [58d079ce](./58d079ce.md) | 2025-07-17 15:18 | Johan Sörell | docs(man): add man page and setup infrastructure |
 | [4c7db28f](./4c7db28f.md) | 2025-07-17 15:11 | Johan Sörell | feat(ignore): enhance .treeignore with full pattern matching support |
