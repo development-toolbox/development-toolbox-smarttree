@@ -7,6 +7,7 @@ Each commit links to its detailed log.
 
 | Commit Hash | Date & Time       | Author       | Message           |
 |-------------|------------------|--------------|-------------------|
+| [10d8f8ef](./10d8f8ef.md) | 2025-07-17 15:54 | Johan Sörell | docs(readme): update for v0.2.0 release |
 | [4af2cecc](./4af2cecc.md) | 2025-07-11 16:52 | Johan Sörell | chore(docs): changed documentation contribution text |
 | [d11e8065](./d11e8065.md) | 2025-07-11 16:51 | Johan Sörell | chore(docs, treeignore): changed documentation contribution text |
 | [9d25ce9a](./9d25ce9a.md) | 2025-07-10 10:10 | Johan Sörell | docs(project): add comprehensive documentation infrastructure |
