@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "smarttree"
-version = "0.1.0"
+version = "0.2.0"
 description = "Modern cross-platform directory tree viewer with emoji support, Markdown export, .treeignore filtering, and colorized output"
 readme = "README.md"
 authors = [

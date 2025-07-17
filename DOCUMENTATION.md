@@ -2,6 +2,45 @@
 
 This guide covers setting up various documentation formats for SmartTree.
 
+## 🚫 .treeignore Documentation
+
+The `.treeignore` file supports pattern matching similar to `.gitignore`:
+
+### Pattern Syntax
+- `*` - Matches any number of characters
+- `?` - Matches exactly one character  
+- `[seq]` - Matches any character in sequence
+- `[!seq]` - Matches any character NOT in sequence
+- `/` at end - Only matches directories
+
+### Examples
+```bash
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environments
+.venv/
+venv/
+env/
+
+# Ignore by pattern
+build*/        # Matches build, build1, build-debug, etc.
+*.egg-info/    # Matches any .egg-info directory
+test?.txt      # Matches test1.txt, test2.txt, but not test10.txt
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+```
+
+### Testing .treeignore
+Run the test script to verify patterns work correctly:
+```bash
+python test_treeignore.py
+```
+
 ## 📚 Documentation Types
 
 ### 1. Tab Completion (Shell Autocomplete)
@@ -68,7 +107,7 @@ Info pages are more detailed than man pages with hyperlinks and navigation.
 @node Top
 @top SmartTree Manual
 
-This manual is for SmartTree version 0.1.0.
+This manual is for SmartTree version 0.2.0.
 @end ifnottex
 
 @menu

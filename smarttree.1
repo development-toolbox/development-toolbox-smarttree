@@ -1,4 +1,4 @@
-.TH SMARTTREE 1 "January 2025" "smarttree 0.1.0" "User Commands"
+.TH SMARTTREE 1 "January 2025" "smarttree 0.2.0" "User Commands"
 .SH NAME
 smarttree \- modern cross-platform directory tree viewer
 .SH SYNOPSIS
@@ -47,18 +47,55 @@ Directory path to scan (default: current directory)
 If a 
 .B .treeignore
 file exists in the target directory, SmartTree will exclude matching entries from the output.
-The format is similar to .gitignore:
+The format supports wildcards and patterns similar to .gitignore:
 .PP
 .RS
 # Comments start with hash
 .br
-__pycache__
+# Ignore specific files
+.br
+.DS_Store
+.br
+*.log
+.br
+.br
+# Ignore file patterns  
 .br
 *.pyc
 .br
-node_modules
+*.swp
 .br
-.DS_Store
+.br
+# Ignore directories (use trailing slash)
+.br
+__pycache__/
+.br
+node_modules/
+.br
+.venv/
+.br
+.br
+# Wildcard patterns
+.br
+build*/
+.br
+*.egg-info/
+.RE
+.PP
+Pattern matching rules:
+.RS
+.IP \(bu 2
+* matches any number of characters
+.IP \(bu 2
+? matches a single character  
+.IP \(bu 2
+[seq] matches any character in seq
+.IP \(bu 2
+[!seq] matches any character not in seq
+.IP \(bu 2
+Patterns ending with / only match directories
+.IP \(bu 2
+Patterns without / match both files and directories
 .RE
 .SH EXAMPLES
 .TP

@@ -36,9 +36,10 @@ import os
 import argparse
 import sys
 import io
-from typing import cast, TextIO
+import fnmatch
+from typing import cast, TextIO, List, Set
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __author__ = "Johan Sörell"
 
 # Fix for Pylance false positive on .reconfigure() (Python 3.7+)
@@ -52,14 +53,44 @@ else:
 def load_treeignore(base_path):
     """Load ignore patterns from .treeignore file."""
     ignore_file = os.path.join(base_path, ".treeignore")
-    ignore_set = set()
+    patterns = []
     if os.path.exists(ignore_file):
         with open(ignore_file, "r", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if line and not line.startswith("#"):
-                    ignore_set.add(line)
-    return ignore_set
+                    patterns.append(line)
+    return patterns
+
+def should_ignore(item_name: str, is_dir: bool, patterns: List[str]) -> bool:
+    """Check if an item should be ignored based on patterns.
+    
+    Note: Pattern matching is case-sensitive on all platforms for consistency.
+    """
+    import platform
+    
+    for pattern in patterns:
+        # Handle directory-specific patterns (ending with /)
+        if pattern.endswith('/'):
+            if is_dir:
+                # On Windows, we need case-sensitive matching
+                if platform.system() == 'Windows':
+                    # Use fnmatchcase for case-sensitive matching on Windows
+                    if fnmatch.fnmatchcase(item_name, pattern[:-1]):
+                        return True
+                else:
+                    if fnmatch.fnmatch(item_name, pattern[:-1]):
+                        return True
+        # Handle patterns that should match both files and directories
+        else:
+            # Use fnmatchcase for consistent case-sensitive matching
+            if platform.system() == 'Windows':
+                if fnmatch.fnmatchcase(item_name, pattern):
+                    return True
+            else:
+                if fnmatch.fnmatch(item_name, pattern):
+                    return True
+    return False
 
 def colorize(text, is_dir, use_color):
     """Apply color to directory names if enabled."""
@@ -69,7 +100,7 @@ def colorize(text, is_dir, use_color):
 
 def print_tree(startpath, prefix="", level=0, max_depth=None,
                use_color=False, output_lines=None, stats=None,
-               ignore_set=None, emoji=False):
+               ignore_patterns=None, emoji=False):
     """Recursively print directory tree structure."""
     try:
         items = sorted(os.listdir(startpath))
@@ -78,11 +109,13 @@ def print_tree(startpath, prefix="", level=0, max_depth=None,
         return
 
     for idx, item in enumerate(items):
-        if item in ignore_set:
-            continue
-
         path = os.path.join(startpath, item)
         is_dir = os.path.isdir(path)
+        
+        # Check if item should be ignored
+        if should_ignore(item, is_dir, ignore_patterns or []):
+            continue
+
         connector = "└── " if idx == len(items) - 1 else "├── "
 
         emoji_icon = ""
@@ -106,7 +139,7 @@ def print_tree(startpath, prefix="", level=0, max_depth=None,
                 extension = "    " if idx == len(items) - 1 else "│   "
                 print_tree(path, prefix + extension, level + 1,
                            max_depth, use_color, output_lines, stats,
-                           ignore_set, emoji)
+                           ignore_patterns, emoji)
 
 def main():
     """Main entry point for smarttree command."""
@@ -157,7 +190,7 @@ Project:
 
     output_lines = [] if args.output or args.log else None
     stats = {"dirs": 0, "files": 0} if args.summary else None
-    ignore_set = load_treeignore(args.path)
+    ignore_patterns = load_treeignore(args.path)
 
     # emoji default logic: auto-on if Markdown and not explicitly disabled
     use_emoji = args.emoji if args.emoji is not None else (
@@ -170,7 +203,7 @@ Project:
         use_color=args.color,
         output_lines=output_lines,
         stats=stats,
-        ignore_set=ignore_set,
+        ignore_patterns=ignore_patterns,
         emoji=use_emoji,
     )
 

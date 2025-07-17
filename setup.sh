@@ -1,5 +1,6 @@
 #!/bin/bash
 # setup.sh - Quick setup script for SmartTree documentation and development
+# Works on Linux, macOS, and Git Bash/WSL on Windows
 
 set -e  # Exit on error
 
